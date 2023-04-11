@@ -2,7 +2,8 @@
 
 members = [
     "common",
-    "d230408"
+    "d230408",
+    "d230410"
 ]
 
 resolver = "2"
