@@ -1,30 +1,27 @@
-use nannou::prelude::*;
 use nannou::color;
 use nannou::color::encoding::Srgb;
+use nannou::prelude::*;
 use nannou::rand;
 use nannou::rand::rand::seq::IteratorRandom;
-
 
 fn main() {
     nannou::app(model).update(update).size(500, 500).run();
 }
 
 struct Model {
-    circles: Vec<Circle>
+    circles: Vec<Circle>,
 }
 
 struct Circle {
     x: f32,
     y: f32,
     radius: f32,
-    color: color::rgb::Rgb<Srgb, u8>
+    color: color::rgb::Rgb<Srgb, u8>,
 }
 
 fn model(app: &App) -> Model {
     let _window = app.new_window().view(view).build().unwrap();
-    Model {
-        circles: vec![]
-    }
+    Model { circles: vec![] }
 }
 
 fn view(app: &App, model: &Model, frame: Frame) {
@@ -53,7 +50,7 @@ fn update(_: &App, model: &mut Model, _: Update) {
         x: random_range(-250.0, 250.0),
         y: random_range(-250.0, 250.0),
         radius: random_range(0.0, 100.0),
-        color: *color
+        color: *color,
     };
     model.circles.push(circle);
 }
